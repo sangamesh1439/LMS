@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Semantic UI Starter',
+    title: 'Ministry of Labor & Employment',
+    subTitle: 'An initiative by Ministry of Labor & Employment',
   },
   plugins: ['gatsby-plugin-react-helmet', 'gatsby-plugin-less'],
 }
