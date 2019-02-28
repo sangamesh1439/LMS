@@ -2,11 +2,7 @@
 import React from 'react';
 import { push } from 'gatsby-link';
 import { Route } from 'react-router-dom';
-
-const isLoggedIn = ()=>{
-  return true
-}
-
+import {isLoggedIn} from '../lib/auth';
 const PrivateRoute = ({ component, path }) => {
   const isAlreadyLoddedIn = isLoggedIn();
   if (isAlreadyLoddedIn) {
