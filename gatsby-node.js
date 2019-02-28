@@ -15,3 +15,12 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
     },
   });
 };
+
+exports.onCreatePage = async ({page,boundActionCreators}) => {    
+  const { createPage } = boundActionCreators
+
+  if (page.path.match(/^\/home/)) {
+    page.matchPath = `/home/*`
+    createPage(page)
+  }
+} 
