@@ -4,6 +4,7 @@ import { Container, Grid, Menu } from 'semantic-ui-react'
 import { Button } from 'semantic-ui-react'
 import { logoutApi } from '../lib/apis';
 import { push } from 'gatsby-link';
+import { dummyabcAPI, registerAPI } from '../lib/apis';
 
 const Header = ({ siteMetadata }) => (
   <div >
@@ -29,7 +30,17 @@ const Header = ({ siteMetadata }) => (
         logoutApi()
         push('/login/');
       }}> LOGOUT </Button>
+
+      <Button onClick={async () => {
+        console.log('abc data', await dummyabcAPI());
+      }}> GET dummy data </Button>
+
+      <Button onClick={async () => {
+        console.log('register api data', await registerAPI());
+      }}> Register API </Button>
+
     </Container>
+
   </div>
 )
 

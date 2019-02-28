@@ -1,4 +1,4 @@
-import {setItem,clear} from './secureStorage';
+import { setItem, clear } from './secureStorage';
 import { createRequest } from './requestHelper';
 
 export const loginApi = (data) => {
@@ -39,6 +39,42 @@ export const loginApi = (data) => {
         });
       });
   });
+};
+
+export const registerAPI = async (data) => {
+  const request = createRequest({
+    path: '/auth/local/register',
+    method: 'POST',
+    body:JSON.stringify({
+      "username": "John DOE",
+      "email": "contact@company.com",
+      "password": "123456"
+    }),
+    byPassAuth: true,
+  });
+
+  let response = await fetch(request);
+  if (response.status === 200||response.status === 201) {
+    console.log(' registerAPI success');
+  }
+  
+  console.log('response: ', response);
+};
+
+export const dummyabcAPI = async (data) => {
+  const request = createRequest({
+    path: '/abcs',
+    method: 'GET',
+    byPassAuth: false,
+  });
+
+  let response = await fetch(request);
+  if (response.status === 200) {
+    console.log(' in valid request dummyabcAPI')
+  }
+
+  response = await response.json();
+  console.log('response: ', response);
 };
 
 export const logoutApi = () => {
