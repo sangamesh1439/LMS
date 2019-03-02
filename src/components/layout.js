@@ -33,15 +33,11 @@ const Layout = ({ children, data }) => (
         <Header siteMetadata = {data.site.siteMetadata} />
 
         <Container>
-          <Grid relaxed stackable>
-            <Grid.Column mobile={16} tablet={4} computer={4}>
-              
-            </Grid.Column>
-
-            <Grid.Column mobile={16} tablet={8} computer={8}>
-              {children}
-            </Grid.Column>
-          </Grid>
+        <Grid relaxed stackable>
+              <Grid.Column mobile={16} tablet={16} computer={16}>
+                {children}
+              </Grid.Column>
+            </Grid>
         </Container>
       </>
     )}
