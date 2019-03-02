@@ -25,6 +25,7 @@ const Header = ({ siteMetadata }) => (
           <Menu.Item to='/page-2' as={Link} activeClassName='active' >Page 2</Menu.Item>
           <Menu.Item to='/404' as={Link} activeClassName='active' >404 Example page</Menu.Item>
           <Menu.Item to='/contactus' as={Link} activeClassName='active' >Contact Us</Menu.Item>
+          <Menu.Item to='/aboutus' as={Link} activeClassName='active' >About Us</Menu.Item>
         </Menu>
       </Grid.Column>
       <Button onClick={() => {
